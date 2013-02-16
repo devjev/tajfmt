@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesClass{tajfmt}[2013/02/16]
+
+
+%% Encoding
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+
+%% Math Stuff
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+
+
+%% Graphics Stuff
+\RequirePackage{tikz}
+\usetikzlibrary{shapes, arrows}
+
+
+%% Fonts
+%%% Use Times for roman styles
+\RequirePackage{mathptmx}
+
+%%% Use Helvetica as the default font
+\RequirePackage[scaled=0.90]{helvet}
+\renewcommand*\familydefault{\sfdefault}
+
+
+
+%% Document Decoration
+\RequirePackage[rm]{titlesec}   % Roman headers
+
+
+%% Good verbatim settings for code listings
+\usepackage[scaled=0.85]{beramono}
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+
+%% Lists
+\RequirePackage{paralist}       % inline lists
+
+
+%% Spacing
+\RequirePackage{xspace}
+
+
+%% Custom Commands
+\RequirePackage{xparse}         % advanced interface for creating commands
+
+%%% Notation for special sets
+\newcommand{\naturals}{\mathbb{N}}
+\newcommand{\integers}{\mathbb{Z}}
+\newcommand{\rationals}{\mathbb{Q}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\complexns}{\mathbb{C}}
+
+
+%%% Calculus Notation
+%%%% Leibniz Partial Derivative Notation up to 4th order
+%\NewDocumentCommand
+\newcommand{\di}[2][x]{\frac{\partial#2}{\partial#1}}
+\newcommand{\ddi}[2][x]{\frac{\partial^2#2}{\partial#1^2}}
+\newcommand{\dddi}[2][x]{\frac{\partial^3#2}{\partial#1^3}}
+\newcommand{\ddddi}[2][x]{\frac{\partial^4#2}{\partial#1^4}}
+
+\newcommand{\Di}[2][x]{\frac{\partial}{\partial#1}#2}
+\newcommand{\DDi}[2][x]{\frac{\partial^2}{\partial#1^2}#2}
+\newcommand{\DDDi}[2][x]{\frac{\partial^3}{\partial#1^3}#2}
+\newcommand{\DDDDi}[2][x]{\frac{\partial^4}{\partial#1^4}#2}
+
+%%%% Euler notation
+\NewDocumentCommand\df{O{x}m}{\textsc{\rm{D}}_{#1}\big(#2\big)}
+\NewDocumentCommand\ddf{O{x}m}{\textsc{\rm{D}}_{#1{}}^{2}\big(#2\big)}
+\NewDocumentCommand\dddf{O{x}m}{\textsc{\rm{D}}_{#1{}}^{3}\big(#2\big)}
+\NewDocumentCommand\ddddf{O{x}m}{\textsc{\rm{D}}_{#1{}}^{4}\big(#2\big)}
+
+%%%% My shorthand derivative notation
+\NewDocumentCommand\ds{O{x}m}{\big(#2\big)_{#1}}
+\NewDocumentCommand\dds{O{x}m}{\big(#2\big)_{#1#1}}
+\NewDocumentCommand\ddds{O{x}m}{\big(#2\big)_{#1#1#1}}
+\NewDocumentCommand\dddds{O{x}m}{\big(#2\big)_{#1#1#1#1}}
+
+%%%% Notation for differentials
+\NewDocumentCommand\dif{m}{{\rm{d#1}}}

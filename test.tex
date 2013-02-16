@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{tajfmt}
+
+\begin{document}
+\section{Special Notation}
+We use Euler notation for ordinary and partial derivatives. For example: a derivative of the function $f$ is denoted by $\df[z]{f}$, the differential, however, is denoted by $\dif{f}$. Furthermore, higher order derivatives are denoted as follows: $\ddf[z]{f}$ means ``the second order derivative of $f$ in relation to $z$''.
+
+As an example, consider It\^o's formula in the above notation:
+\begin{align*}
+	\text{given } \dif{x} &= a\dif{t} + \sigma\dif{W} \\
+	\df{F} &= {\Big[a\df{F} + \df[t]{F} + \frac{\sigma^2}{2}\ddf{F}\Big]
+		\dif{t} + \sigma\df{F}\dif{W}}
+\end{align*}
+
+Or, take Taylor series expansion:
+\begin{align*}
+	F(x + \delta{}x) &= {F(x) + \df{f}\delta{}x + 
+		\frac{\ddf{f}}{2!} \delta{}x^2 + 
+		\frac{\dddf{f}}{3!}\delta{}x^3 + \dots}
+\end{align*}
+
+Another peculiarity of this notation, is that common parens are \emph{never} used for
+grouping expression, but rather only for function application. Expressions are groupped with square parens, like this $[a+b]^2 = a^2 + b^2 + 2ab$.
+
+This gives us additional expressive power in our notation, like for example a suggested short hand notation for derivation:
+\begin{align*}
+	\ds[t]{f} &= \frac{1}{a^2}\dds{f}
+\end{align*}
+
+
+\section{Techical}
+
+Also, these documents will quite often use a verbatim font, \Verb|something_like_this| to denote computer input or output.
+
+\end{document}
