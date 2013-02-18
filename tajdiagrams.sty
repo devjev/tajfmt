@@ -6,4 +6,43 @@
 \usetikzlibrary{shapes, arrows}
 
 %% Custom Commands
-\RequirePackage{xparse}         % advanced interface for creating commands
+\RequirePackage{ifthen}
+\RequirePackage{xparse}         % advanced interface for creating
+                                % commands
+
+\NewDocumentEnvironment{tikz-proc-diagram}{O{2cm}}
+{\begin{center}\begin{tikzpicture}[node distance=#1, auto]}
+{\end{tikzpicture}\end{center}}
+
+
+% Graphic Vocabulary
+
+\tikzstyle{function} = [
+circle, 
+draw,
+text width=5em, 
+text centered, 
+minimum height=4em,
+node distance=20ex]
+
+
+\tikzstyle{external-interaction} = [
+rectangle, 
+draw,
+text width=5em, 
+text centered, 
+minimum height=4em,
+node distance=20ex]
+
+
+\tikzstyle{interface} = [
+rectangle,
+thick,
+rounded corners=1ex,
+draw,
+text width=5em, 
+text centered, 
+minimum height=4em,
+node distance=20ex]
+
+\tikzstyle{input} = [draw, -latex']
