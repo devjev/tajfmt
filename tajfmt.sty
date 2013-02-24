@@ -7,6 +7,10 @@
 \RequirePackage[T1]{fontenc}
 
 
+%% Tools For Custom Command
+\RequirePackage{xparse}
+
+
 %% Math Stuff
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -27,7 +31,80 @@
 
 
 %% Document Decoration
-\RequirePackage[rm]{titlesec}   % Roman headers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}      
+
+\RequirePackage{titlesec}
+
+%%% Chapter title.
+\NewDocumentCommand\chapterfmt{m}{%
+\begin{minipage}[b]{\textwidth}
+    \begin{minipage}[b]{30pt}%
+      {\sffamily\bfseries\fontsize{48}{48}\selectfont\thechapter}%
+    \end{minipage}%
+    \quad%
+    \begin{minipage}[t]{.5\textwidth}%
+      {\rmfamily\fontsize{18}{6}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\NewDocumentCommand\chapterfmtnn{m}{%
+\begin{minipage}[t]{\textwidth}%
+    \begin{minipage}[t]{.5\textwidth}%
+      {\rmfamily\fontsize{18}{6}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\titleformat{name=\chapter}[block]{}{}{0ex}{\chapterfmt}
+\titleformat{name=\chapter,
+numberless=true}[block]{}{}{0ex}{\chapterfmtnn}
+
+%%% Section title.
+\NewDocumentCommand\sectionfmt{m}{%
+\begin{minipage}[b]{\textwidth}
+    \begin{minipage}[b]{30pt}%
+      {\sffamily\bfseries\fontsize{14}{14}\selectfont\thesection}%
+    \end{minipage}%
+    \quad%
+    \begin{minipage}[t]{.55\textwidth}%
+      {\sffamily\fontsize{14}{14}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\NewDocumentCommand\sectionfmtnn{m}{%
+\begin{minipage}[b]{\textwidth}
+    \begin{minipage}[t]{.55\textwidth}%
+      {\sffamily\fontsize{14}{14}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\titleformat{name=\section}[block]{\vspace{2em}}{}{0ex}{\vspace{1ex}\sectionfmt}
+\titleformat{name=\section,
+numberless=true}[block]{\vspace{2em}}{}{0ex}{\vspace{1ex}\sectionfmtnn}
+
+
+%%% Sub-Section title.
+\NewDocumentCommand\subsectionfmt{m}{%
+\begin{minipage}[b]{\textwidth}
+    \begin{minipage}[b]{30pt}%
+      {\sffamily\bfseries\fontsize{11}{14}\selectfont\thesubsection}%
+    \end{minipage}%
+    \quad%
+    \begin{minipage}[t]{.55\textwidth}%
+      {\rmfamily\fontsize{11}{14}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\NewDocumentCommand\subsectionfmtnn{m}{%
+\begin{minipage}[b]{\textwidth}
+    \begin{minipage}[t]{.55\textwidth}%
+      {\rmfamily\fontsize{11}{14}\selectfont#1}%
+    \end{minipage}%
+\end{minipage}}
+
+\titleformat{name=\subsection}[block]{\vspace{2em}}{}{0ex}{\vspace{1em}\subsectionfmt}
+\titleformat{name=\subsection,
+numberless=true}[block]{}{}{0ex}{\vspace{1ex}\subsectionfmtnn}
 
 
 %% Good verbatim settings for code listings
@@ -45,8 +122,6 @@
 
 
 %% Custom Commands
-\RequirePackage{xparse}         % advanced interface for creating commands
-
 %%% Notation for special sets
 \newcommand{\naturals}{\mathbb{N}}
 \newcommand{\integers}{\mathbb{Z}}

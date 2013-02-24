@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\usepackage{fullpage}
+%\usepackage{fullpage}
 \usepackage{tajfmt}
 \usepackage{tajdiagrams}
 
@@ -28,6 +28,15 @@ grouping expression, but rather only for function application. Expressions are g
 This gives us additional expressive power in our notation, like for example a suggested short hand notation for derivation:
 \begin{align*}
 	\ds[t]{f} &= \frac{1}{a^2}\dds{f}
+\end{align*}
+
+Function and operator arithmetic are to be written in a way, that makes it clear, that these are indeed functions. Consider the following notation:
+\begin{align*}
+	Y_t - \beta{}Y_{t-1} &= \beta + \epsilon_{t} \\
+	\\
+	\big[1 - \beta{}L(\cdot)\big]Y_t &= \beta + \epsilon_{t} \\
+	\big[1 - \beta{}L(\dots)\big]Y_t &= \beta + \epsilon_{t} \\
+	\big[1 - \beta{}(L)\big]Y_t &= \beta + \epsilon_{t}
 \end{align*}
 
 
