@@ -48,12 +48,12 @@ Also, these documents will quite often use a verbatim font, \Verb|something_like
 \section{Flow Diagrams}
 
 \begin{tikz-proc-diagram}
-	\node[external-interaction] (init) {Deathray Plans from R\&D (CAD format)};
-	\node[interface, right of=init] (iface-cad2mr) {CAD Converter};
-	\node[function, right of=iface-cad2mr] (fab-dw) {Fabricate Death Widgets};
-	\node[function, below of=fab-dw] (fab-ot) {Fabricate Orphan Targeting System};
-	\node[function, right of=fab-dw] (assemble) {Assemble the doom machine};
-	\node[external-interaction, below of=assemble] (fin) {Deathray shipped to Kim-Jing-Un};
+	\node[external-interaction] (init) {\tightspacing{Deathray Plans from R\&D (CAD format)}};
+	\node[interface, right of=init] (iface-cad2mr) {\tightspacing{CAD Converter}};
+	\node[function, right of=iface-cad2mr] (fab-dw) {\tightspacing{Fabricate Death Widgets}};
+	\node[function, below of=fab-dw] (fab-ot) {\tightspacing{Fabricate Orphan Targeting System}};
+	\node[function, right of=fab-dw] (assemble) {\tightspacing{Assemble the doom machine}};
+	\node[external-interaction, below of=assemble] (fin) {\tightspacing{Deathray shipped to Kim-Jing-Un}};
 	
 	\path[input]
 		(init) edge[->] node[auto,swap] {\Verb|.cad| file} (iface-cad2mr)

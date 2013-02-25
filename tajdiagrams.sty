@@ -5,6 +5,9 @@
 \RequirePackage{tikz}
 \usetikzlibrary{shapes, arrows}
 
+%% Spacing
+\RequirePackage{setspace}
+
 %% Custom Commands
 \RequirePackage{ifthen}
 \RequirePackage{xparse}         % advanced interface for creating
@@ -13,6 +16,8 @@
 \NewDocumentEnvironment{tikz-proc-diagram}{O{2cm}}
 {\begin{center}\begin{tikzpicture}[node distance=#1, auto]}
 {\end{tikzpicture}\end{center}}
+
+\NewDocumentCommand\tightspacing{m}{\begin{spacing}{1}#1\end{spacing}}
 
 
 % Graphic Vocabulary
