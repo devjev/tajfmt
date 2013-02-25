@@ -20,9 +20,14 @@
 \RequirePackage{graphicx}
 
 
+%% Lengths
+\newcommand\TAJTitleWidth{.75\textwidth{}}
+
+
 %% Fonts
 %%% Use Times for roman styles
-\RequirePackage{mathptmx}
+\RequirePackage{tgpagella}      % Palatino for headings
+\RequirePackage{cmbright}       % CM Bright for maths
 
 %%% Use Helvetica as the default font
 \RequirePackage[scaled=0.90]{helvet}
@@ -43,14 +48,14 @@
       {\sffamily\bfseries\fontsize{48}{48}\selectfont\thechapter}%
     \end{minipage}%
     \quad%
-    \begin{minipage}[t]{.5\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\rmfamily\fontsize{18}{6}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
 
 \NewDocumentCommand\chapterfmtnn{m}{%
 \begin{minipage}[t]{\textwidth}%
-    \begin{minipage}[t]{.5\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\rmfamily\fontsize{18}{6}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
@@ -66,14 +71,14 @@ numberless=true}[block]{}{}{0ex}{\chapterfmtnn}
       {\sffamily\bfseries\fontsize{14}{14}\selectfont\thesection}%
     \end{minipage}%
     \quad%
-    \begin{minipage}[t]{.55\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\sffamily\fontsize{14}{14}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
 
 \NewDocumentCommand\sectionfmtnn{m}{%
 \begin{minipage}[b]{\textwidth}
-    \begin{minipage}[t]{.55\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\sffamily\fontsize{14}{14}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
@@ -90,14 +95,14 @@ numberless=true}[block]{\vspace{2em}}{}{0ex}{\vspace{1ex}\sectionfmtnn}
       {\sffamily\bfseries\fontsize{11}{14}\selectfont\thesubsection}%
     \end{minipage}%
     \quad%
-    \begin{minipage}[t]{.55\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\rmfamily\fontsize{11}{14}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
 
 \NewDocumentCommand\subsectionfmtnn{m}{%
 \begin{minipage}[b]{\textwidth}
-    \begin{minipage}[t]{.55\textwidth}%
+    \begin{minipage}[t]{\TAJTitleWidth}%
       {\rmfamily\fontsize{11}{14}\selectfont#1}%
     \end{minipage}%
 \end{minipage}}
@@ -157,3 +162,7 @@ numberless=true}[block]{}{}{0ex}{\vspace{1ex}\subsectionfmtnn}
 
 %%%% Notation for differentials
 \NewDocumentCommand\dif{m}{{\rm{d#1}}}
+
+
+%%% Linear Algebra Notation
+\NewDocumentCommand\mtx{m}{{\boldsymbol{#1}}}
